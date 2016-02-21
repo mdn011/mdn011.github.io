@@ -12,11 +12,31 @@
 	 	margin-left: 20%;
 	    margin-right: 20%;
 	 }
+	 #main-wrapper {
+		float:left;
+		width:620px;
+		}
+	 #sidebar-wrapper {
+		float:right;
+		width:300px;
+	}
 	</style>
 </head>
 <body>
 <div class="container">
+
 <h1 align="center">Welcome</h1>
+
+	<div id='main-wrapper'>
+		<b:section class='main' id='main' showaddelement='no'>
+		<b:widget id='Blog1' locked='true' title='Blog Entries' type='Blog'/>
+		</b:section>
+	</div>
+
+	<div id='sidebar-wrapper'>
+		<b:section class='sidebar' id='sidebar' preferred='yes'>
+			
+		</b:section>	
 
 </body>
 </html>
