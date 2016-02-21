@@ -4,39 +4,66 @@
 <meta charset="utf-8">
 	<title>Welcome</title>
 	<style>
-	 body {
-	    background-color: #36454f;
-	 }
 	 div.container {
-	 	background-color: #ffffff;
-	 	margin-left: 20%;
-	    margin-right: 20%;
+	 	margin-left: 5%;
+	    margin-right: 5%;
 	 }
-	 #main-wrapper {
-		float:left;
-		width:620px;
-		}
-	 #sidebar-wrapper {
-		float:right;
-		width:300px;
+	 .navigation {
+	    position:absolute;
+	    background-color: #090F0F;
+	    left:0; right:0; top: 0;
+	 }
+	 .navigation ul {
+	 	list-style-type: none;
+	 	margin: 0;
+	 	padding: 0;
+	 }
+	 .navigation li {
+	 	display:inline-block;
+	 	margin: 0 10px;
+	 	color: #ffffff;
+	 }
+	 .navigation a {
+	  background: #395870;
+	  background: linear-gradient(#49708f, #293f50);
+	  border-right: 1px solid rgba(0, 0, 0, .3);
+	  color: #fff;
+	  padding: 12px 20px;
+	  text-decoration: none;
 	}
+	 #right {
+	    float: right;
+	    background-color: #d2b48c;
+	    left:0; top:92px; bottom: 0;
+	    width: 178px;
+	 }
+	 #main {
+	    float: left;
+	    left:178px; top:92px; right:0; bottom:0;
+	 }
 	</style>
 </head>
 <body>
+
+<nav class="navigation">
+	<ul>
+		 <li><a href="index.html">Home</a></li>
+		 <li>Mesa College</li>
+		 <li>Contact</li>
+		 <li>About</a></li>
+	</ul> 
+</nav>
+
 <div class="container">
 
-<h1 align="center">Welcome</h1>
+	<aside id="right">
+		<header><h1 align="center">Navigate</h1></header>
+	</aside>
 
-	<div id='main-wrapper'>
-		<b:section class='main' id='main' showaddelement='no'>
-		<b:widget id='Blog1' locked='true' title='Blog Entries' type='Blog'/>
-		</b:section>
+	<div id="main">
+		<header><h1 align="center" style="color:#32cd32">Welcome</h1></header>
 	</div>
 
-	<div id='sidebar-wrapper'>
-		<b:section class='sidebar' id='sidebar' preferred='yes'>
-			
-		</b:section>	
-
+</div>
 </body>
 </html>
