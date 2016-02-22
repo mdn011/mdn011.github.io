@@ -1,6 +1,6 @@
 /*This is the style sheet for index.html, the homepage*/
 body {
-	background-image: url("images/woods.jpg");
+	background-image: url("images/mountain.png");
 }
 .container {
 	margin-top: 3%;
@@ -50,8 +50,9 @@ body {
 	position: absolute;
 	background-color: #395870;
 	background: linear-gradient(#49708f, #293f50);
-	right:0; top:10px; bottom: 0;
+	right:0; top:10px;
 	width: 200px;
+	height: 817px;
 	border: 2px solid black;
 }
 #right ul {
