@@ -1,0 +1,16 @@
+body {
+	background-color: #FFEBCD;
+	font-family: sans-serif;
+}
+
+h1 {
+	color: #A67E43;
+}
+
+p {
+	color: #2C4B6C;
+}
+
+.right {
+	font-weight: 900;
+}
