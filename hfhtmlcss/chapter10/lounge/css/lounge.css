@@ -30,6 +30,27 @@ h2 {
 	font-size: 130%;
 }
 
+#elixirs {
+  border: thin solid #007e7e;
+  width: 200px;
+  padding: 0px 20px 20px 20px;
+  margin-left: 20px;
+  text-align: center;
+  background-image: url("../images/cocktail.gif");
+  background-repeat: repeat-x;
+  line-height: 1;
+  float: right;
+}
+
+#elixirs h2 {
+  color: black;
+}
+
+#elixirs h3 {
+  color: #d12c47;
+}
+
+
 #guarantee {
 	border-color: black;
 	border-width: 1px;
@@ -56,4 +77,32 @@ h2 {
 	border-top-right-radius: 20px;
 	border-bottom-right-radius: 20px;
 	border-bottom-left-radius: 20px;
+}
+
+#directions a:link {
+  color: #007e7e;
+}
+
+#directions a:visited {
+  color: #ff00ff;
+}
+
+#directions a:hover {
+  background: #ff00ff;
+  color: #0000ff;
+}
+
+.cd {
+  font-style: italic;
+}
+
+.artist {
+  font-weight: bold;
+}
+
+#footer {
+  font-size: 50%;
+  text-align: center;
+  line-height: normal;
+  margin-top: 30px;
 }
