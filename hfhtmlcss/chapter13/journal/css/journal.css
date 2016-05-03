@@ -5,15 +5,15 @@
 body {
   font-family: Verdana, Geneva, Arial, sans-serif;
   font-size: small;
-  background: #FFF8DC; /*I added a background color for stylistic purposes.*/
+  background: #FFF8DC; /*background color for stylistic purposes.*/
   margin: 0;
   padding: 0;
 }
-/*I added a border around my images*/ 
+/*border around images*/ 
 img {
   border: 2px solid #888888;
 }
-/*I copied this style from the Chapter 11 absolute/starbuzz.css file */
+/* Obtained from Marianne Gibson's page source here: http://209.129.16.61/~mgib/data/webd162/13/journal/journal.html */
 #container {
   width: 960px;
   padding: 15px;
@@ -41,13 +41,15 @@ table {
   border: thin solid black;
   caption-side: bottom;
   border-collapse: collapse;
-  background-color: #fff; /*I added in a white background to the entire table so the body background color would not show through. The table .cellcolor style below will overwrite the styles for the alternating rows their css styles is later in my CSS stylesheet. */
+  background-color: #fff; /*add white background to the entire table so the body background color would not show */
 }
 td, th {
   border: thin dotted gray;
   padding: 5px;
 }
-/* place the new tr pseudo-class rule above the rule for setting the background color of the <th> row (so the <th> row stays dark orange).
+/* Not needed
+
+place the new tr pseudo-class rule above the rule for setting the background color of the <th> row (so the <th> row stays dark orange).
 tr:nth-child(odd) {
 background-color: #fcba7a;
 }
@@ -66,25 +68,31 @@ caption {
   text-align: right;
 }
 .cellcolor {
-  background-color: #fcba7a;
+  background-color: #fcba7a; /*alternating row colors */
 }
-/* This style is for the nested dinner rating table */
+
+/* Not needed
+
+This style is for the nested dinner rating table 
 table table th {
   background-color: white;
-}
+} */
+
 /* The li style is for all list items on your webpages */
 li {
-  list-style-image: url(../images/backpack.gif); /*NOTE: I had to change my path since I moved my journal.css into a CSS folder.*/
+  list-style-image: url(../images/sj.jpg); /*Added my own image here of SJ */
   padding-top: 5px;
   margin-left: 20px;
 }
-/* I copied this style from Chapter 12 starbuzz.css file and modified it just a bit. */
+
+/* Obtained from Marianne Gibson's page source here: http://209.129.16.61/~mgib/data/webd162/13/journal/journal.html */
 footer {
   background-color: #FCBA7A;
   padding: 15px;
   font-size: x-small;
 }
-/* I copied this style from the Chapter 12 starbuzz.css file */
+
+/* Obtained from Marianne Gibson's page source here: http://209.129.16.61/~mgib/data/webd162/13/journal/journal.html */
 #validator {
   float: right;
 }
