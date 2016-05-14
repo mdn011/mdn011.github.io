@@ -3,7 +3,6 @@ body {
 	background-color: #333;
 }
 header {
-	/*background-image: url('../images/mountain.png');*/
 	height: 108px;
 	position: relative;
 }
@@ -43,6 +42,11 @@ header {
 .navigation li:last-child a {
     border-right: 0;
     border-radius: 0 4px 4px 0;
+}
+nav a.selected {
+	background: #314b60;
+	box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, .3);
+	color: #2db34a;
 }
 #tableContainer {
 	display: table;
@@ -89,3 +93,18 @@ section#main {
 #right img {
 	vertical-align: top;
 }*/
+footer {
+  /*background-color: #675c47;*/
+  color: #efe5d0;
+  text-align: center;
+  padding: 15px;
+  /*margin: 0 10px 10px 10px;*/
+  font-size: 90%;
+  background-image: url("../images/mountain.png");
+}
+#validator {
+  float: right;
+}
+#validator a {
+  border-bottom: none;
+}
