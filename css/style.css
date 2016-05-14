@@ -6,6 +6,25 @@ header {
 	height: 108px;
 	position: relative;
 }
+#github{
+	position:absolute;top:50px;right:-75px;
+	-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);-ms-transform:rotate(45deg);
+	transform:rotate(45deg);
+	background:#2db34a;color:#fff;
+	display:block;
+	font-size:14px;font-weight:bold;
+	padding:2px 80px;
+	text-align:center;text-decoration:none;text-shadow:10px,10px,10px,#333;
+	-webkit-box-shadow:#999 1px 1px 4px;
+	box-shadow:#999 1px 1px 4px;}
+#github:hover,#github:focus,#github:active{
+	background:#e22c29
+	}
+@media only screen and (max-width:800px){
+	#github{
+		display:none
+	}
+}
 nav {
 	background-color: #090F0F;
 	margin: 10px 10px 0px 10px;
