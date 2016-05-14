@@ -1,24 +1,23 @@
-/*This is the style sheet for index.html, the homepage*/
 body {
-	background-image: url("../images/mountain.png");
+	/*background-color: #7E93A2;*/
+	background-color: #333;
 }
-.container {
-	margin-top: 3%;
-	margin-bottom: 3%;
-	/*border: 2px solid black;*/
-	padding: 10px 10px 10px 10px;
-	font-size: 20pt;
-	overflow:auto;
+header {
+	/*background-image: url('../images/mountain.png');*/
+	height: 108px;
+	position: relative;
 }
 .navigation {
-	position:fixed;
 	background-color: #090F0F;
-	left:0; right:0; top: 0;
+	margin: 10px 10px 0px 10px;
+	height: 13px;
+	position: absolute;
+	bottom: 0;
 }
 .navigation ul {
 	font: bold 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
-	margin: 0;
-	padding: 0;
+	margin: 0px;
+	padding: 0px;
 	text-transform: uppercase;
 }
 .navigation li {
@@ -45,17 +44,41 @@ body {
     border-right: 0;
     border-radius: 0 4px 4px 0;
 }
-#right {
-	float: right;
-	position: absolute;
-	background-color: #395870;
-	background: linear-gradient(#49708f, #293f50);
-	right:0; top:10px;
-	width: 200px;
-	height: 817px;
-	border: 2px solid black;
+#tableContainer {
+	display: table;
+	/*border-spacing: 10px;*/
+	width: 100%;
 }
-#right ul {
+#tableRow {
+    display: table-row;
+}
+section#main {
+	color: #333;
+	display: table-cell;
+	padding: 15px;
+	vertical-align: top;
+	background-color: #eee;
+	/*background: linear-gradient(#49708f, #293f50);*/
+	width: 70%;
+}
+.right {
+	/*background-color: #395870;
+	background: linear-gradient(#49708f, #293f50);*/
+	text-align: center;
+	color: #333;
+	background-color: #eee;
+	display: table-cell;
+	/*width: 200px;
+	height: 817px;*/
+	/*border: 2px solid black;*/
+	vertical-align: top;
+	width: 30%;
+}
+.right img {
+	display: block;
+	margin: 0 auto;
+}
+/*#right ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -65,14 +88,4 @@ body {
 }
 #right img {
 	vertical-align: top;
-}
-#main {
-	float: left;
-	/*background: #F1F1D4;*/
-	left:0; top:0; right:0; bottom:0;
-	/*border: 2px solid black;*/
-	font-family: "Courier New";
-    font-style: normal;
-    font-weight: 400;
-	color: #ffffff;
-}
+}*/
