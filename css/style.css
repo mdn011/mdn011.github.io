@@ -56,6 +56,9 @@ nav a.selected {
 #tableRow {
     display: table-row;
 }
+.center {
+	text-align: center;
+}
 section#main {
 	color: #333;
 	display: table-cell;
@@ -81,6 +84,10 @@ section#main {
 .right img {
 	display: block;
 	margin: 0 auto;
+}
+aside ol#list {
+	display: inline-block;
+	text-align: left;
 }
 /*#right ul {
 	list-style-type: none;
