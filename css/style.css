@@ -79,6 +79,7 @@ nav a.selected {
 	text-align: center;
 }
 section#main {
+	font-size: 18px;
 	color: #333;
 	display: table-cell;
 	padding: 15px;
@@ -87,9 +88,13 @@ section#main {
 	/*background: linear-gradient(#49708f, #293f50);*/
 	width: 70%;
 }
+div#poem {
+	font-family: 'Josefin Sans', sans-serif;
+}
 .right {
 	/*background-color: #395870;
 	background: linear-gradient(#49708f, #293f50);*/
+	font-size: 18px;
 	text-align: center;
 	color: #333;
 	background-color: #eee;
