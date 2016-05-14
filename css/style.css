@@ -6,25 +6,25 @@ header {
 	height: 108px;
 	position: relative;
 }
-.navigation {
+nav {
 	background-color: #090F0F;
 	margin: 10px 10px 0px 10px;
 	height: 13px;
 	position: absolute;
 	bottom: 0;
 }
-.navigation ul {
+nav ul {
 	font: bold 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin: 0px;
 	padding: 0px;
 	text-transform: uppercase;
 }
-.navigation li {
+nav li {
 	display:inline-block;
 	/*margin: 0 10px;
 	color: #ffffff;*/
 }
-.navigation a {
+nav a {
 	background: #395870;
 	background: linear-gradient(#49708f, #293f50);
 	border-right: 1px solid rgba(0, 0, 0, .3);
@@ -32,16 +32,21 @@ header {
 	padding: 12px 20px;
 	text-decoration: none;
 }
-.navigation a:hover {
+nav a:hover {
 	background: #314b60;
 	box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, .3);
 }
-.navigation li:first-child a {
+nav li:first-child a {
     border-radius: 4px 0 0 4px;
 }
-.navigation li:last-child a {
+nav li:last-child a {
     border-right: 0;
     border-radius: 0 4px 4px 0;
+}
+nav a.selected {
+	background: #314b60;
+	box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, .3);
+	color: #2db34a;
 }
 #tableContainer {
 	display: table;
@@ -89,13 +94,13 @@ section#main {
 	vertical-align: top;
 }*/
 footer {
-  background-image: url('images/mountain.png');
   /*background-color: #675c47;*/
   color: #efe5d0;
   text-align: center;
   padding: 15px;
   /*margin: 0 10px 10px 10px;*/
   font-size: 90%;
+  background-image: url("../images/mountain.png");
 }
 #validator {
   float: right;
