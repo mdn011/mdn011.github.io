@@ -112,6 +112,9 @@ footer {
 #validator {
   float: right;
 }
+#htmlvalidator {
+  float: left;
+}
 #validator a {
   border-bottom: none;
 }
