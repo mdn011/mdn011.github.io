@@ -109,7 +109,7 @@ div#poem {
 	display: block;
 	margin: 0 auto;
 }
-aside ol#list {
+.list {
 	display: inline-block;
 	text-align: left;
 }
