@@ -1,5 +1,6 @@
 body {
 	/*background-color: #7E93A2;*/
+	font-family: 'Josefin Sans', sans-serif;
 	background-color: #333;
 }
 header {
@@ -79,23 +80,24 @@ nav a.selected {
 	text-align: center;
 }
 section#main {
-	font-family: 'Josefin Sans', sans-serif;
 	font-size: 20px;
 	color: #333;
 	display: table-cell;
 	padding: 15px;
 	vertical-align: top;
 	background-color: #eee;
-	/*background: linear-gradient(#49708f, #293f50);*/
 	width: 70%;
 }
 div#poem {
 	font-family: 'Josefin Sans', sans-serif;
 }
-.right {
-	/*background-color: #395870;
-	background: linear-gradient(#49708f, #293f50);*/
-	font-size: 18px;
+.aside {
+	background-color: #eee;
+	display: table-cell;
+	font-size: 20px;
+	vertical-align: top;
+}
+#right {
 	text-align: center;
 	color: #333;
 	background-color: #eee;
@@ -106,13 +108,21 @@ div#poem {
 	vertical-align: top;
 	width: 30%;
 }
-.right img {
+#right img {
 	display: block;
 	margin: 0 auto;
 }
-aside ol#list {
-	display: inline-block;
+.centerpar {
+	text-align: center;
+}
+.list {
 	text-align: left;
+	display: inline-block;
+	margin: 0 auto;
+	padding: 0px 0px 0px 50px;
+}
+#navlist ul {
+	padding: 0px 0px 50px 50px;
 }
 /*#right ul {
 	list-style-type: none;
@@ -126,7 +136,6 @@ aside ol#list {
 	vertical-align: top;
 }*/
 footer {
-  /*background-color: #675c47;*/
   color: #efe5d0;
   text-align: center;
   padding: 15px;
