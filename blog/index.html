@@ -10,6 +10,10 @@
   On really romantic evenings of self, I go salsa dancing with my confusion.
   — quote from Waking Life
 
+  Hello classmates! This website was designed as a final project for a beginner's HTML/CSS course at Mesa Community College in San Diego. If you do plan on taking this course, I highly recommend Professor Marianne Gibson. I have also taken introductory courses in SQL and PHP with her as as well, and the experience has been fantastic.
+
+  Good luck and may all of your dreams come true!
+
 -->
 
 <meta charset="utf-8">
@@ -17,6 +21,8 @@
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <link rel="stylesheet" type="text/css" href="../css/enrich.css">
   <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="css/blog.css">
 </head>
 <body>
 <header>
@@ -40,9 +46,164 @@
 	<h1 class="center">
 	  Posts
 	</h1>
-	<p>
-	  Check back later.
-	</p>
+  <article>
+    <h2>Creative T-shirts anyone?</h2>
+    <p>
+      My sister is quite the artist. Here are some of the designs she put up on Teepublic (here's a link to her <a href="https://www.teepublic.com/user/taiki" target="_blank">profile</a>):<br>
+      <table>
+        <tr>
+        <td><img src="images/daydreamer.jpg" alt="Hi I'm an astronaut with fish around my head" width="380px" height="380px"></td>
+        <td><img src="images/fruitloops.jpg" alt="Please kill me... kill me now" width="380px" height="380px"></td>
+        </tr>
+      </table>
+    </p>
+    <p>
+      My co-worker also has a knack for t-shirt design, except she does it one better: she prints the designs herself! Here are the links to her etsy pages for her <a href="https://www.etsy.com/shop/SpoiledWithOilsCo?ref=profile_shopicon" target="_blank">natural oil clothing</a> and her other <a href="https://www.etsy.com/shop/SetNoLimitsClothing?ref=l2-shopheader-name" target="_blank">humorous line</a>. Check out some of her designs (if you're a lover of natural oils, cats, or wine, then these might be up your alley—however if you're a dude then consider buying one for your SO!):
+      <table>
+        <tr>
+        <td><img src="images/vodkashirt.jpg" alt="Paging AA" width="380px" height="380px"></td>
+        <td><img src="images/oilshirt1.jpg" alt="Love my oily life tank" width="380px" height="380px"></td>
+        </tr>
+        <tr>
+        <td><img src="images/oilshirt3.jpg" alt="Natural oil people..." width="380px" height="380px"></td>
+        <td><img src="images/catsandwine.jpg" alt="Dogs and beer" width="380px" height="380px"></td>
+        </tr>
+      </table>
+    </p>
+  </article>
+  <article>
+    <h2>nodeCount and leavesCount: why D.S. Malik, why?!</h2>
+    <p>
+      As promised, here are the functions to count the total nodes and leaves in a binary tree (building off the source code in the below post). The solution isn't too difficult, and through some googling I found my way. Let's look at what we'll write for nodeCount:
+    </p>
+    <p class="blogCenter">
+      if (p == NULL)<br>
+      return 0;<br>
+      return 1 + nodeCount(p-&gt;llink) + nodeCount(p-&gt;rlink);
+    </p>
+    <p>
+      First remember that this is the private function, and the argument being thrown here is from a public function that throws in root. If the root node is not null then it's going to count 1 for itself, plus it will call two recursive functions. This will branch to all the nodes in the left and the right. As you probably guessed, it'll count 1 for each node as well as call the same funtion for each of those nodes. If they don't have any child nodes, then it will stop as per return 0. Let's look at what we'll write for leavesCount:
+    </p>
+    <p class="blogCenter">
+      if (p == NULL)<br>
+      return 0;<br>
+      if (p-&gt;llink == NULL &amp;&amp; p-&gt;rlink == NULL)<br>
+      return 1;<br>
+      else<br>
+      return leavesCount(p-&gt;llink) + leavesCount(p-&gt;rlink);
+    </p>
+    <p>
+      A little more work, but same principle. You only want to count the nodes that don't have any child nodes, so if to the left of a node is empty and to the right of that node is also empty, return 1. Else, keep going. Now unless the binary tree consists of only the root node, it's not going to hit return 1 on its first run, so this works because we're adding both the return value of the recursive functions being called on both branches. 
+    </p>
+  </article>
+	<article>
+	  <h2>Implementation of a binary tree in C++</h2>
+    <p>
+      I won't go into detail about the useful applications of binary trees. However if you are interested then the information provided in this <a href="http://stackoverflow.com/questions/2130416/what-are-the-applications-of-binary-trees" target="_blank">StackOverflow</a> question is great.
+    </p>
+    <p>
+      Below I provided close to the bare minimum in order to do an inorder traversal of a binary tree (minus the insert function definition). Most of the source code provided for the object below is from <a href="http://www.amazon.com/Data-Structures-Using-D-Malik/dp/0324782012" target="_blank">Data Structures Using C++</a> by D.S. Malik.
+    </p>
+    <p>
+      In a next post, I will go over how to define functions for counting the total nodes and the total leaves in a binary tree, which the book asks you do in a programming exercise but does <strong>not</strong> provide an answer for.
+    </p>
+    <p>
+      Define your node:
+    </p>
+    <p class="blogCenter">
+      template &lt;class elemType&gt;<br>
+      struct binaryTreeNode<br>
+      {<br>
+        elemType info;<br>
+        binaryTreeNode&lt;elemType&gt; *llink;<br>
+        binaryTreeNode&lt;elemType&gt; *rlink;<br>
+      };
+    </p>
+    <p>
+      Define the class:
+    </p>
+    <p class="blogCenter">
+      template &lt;class elemType&gt;<br>
+      class binaryTreeType<br>
+      {<br>
+      public:<br>
+      void inorderTraversal() const;<br>
+      void insert(const elemType&amp; insertItem);<br>
+      binaryTreeType();<br>
+      ~binaryTreeType();<br>
+      protected:<br>
+      binaryTreeNode&lt;elemType&gt; *root;<br>
+      private:<br>
+      void inorder(binaryTreeNode&lt;elemType&gt; *p) const;<br>
+      void destroy(binaryTreeNode&lt;elemType&gt;* &amp;p);<br>
+      };
+    </p>
+    <p>
+      Define member functions:
+    </p>
+    <p class="blogCenter">
+      template &lt;class elemType&gt;<br>
+      binaryTreeType&lt;elemType&gt;::binaryTreeType()<br>
+      {<br>
+        root = NULL;<br>
+      }<br>
+      template &lt;class elemType&gt;<br>
+      void binaryTreeType&lt;elemType&gt;::inorderTraversal() const<br>
+      {<br>
+        inorder(root);<br>
+      }<br>
+      template &lt;class elemType&gt;<br>
+      void binaryTreeType&lt;elemType&gt;::inorder(binaryTreeNode&lt;elemType&gt; *p) const<br>
+      {<br>
+        if (p != NULL)<br>
+        {<br>
+          inorder(p-&gt;llink);<br>
+          cout &lt;&lt; p-&gt;info &lt;&lt; " ";<br>
+          inorder(p-&gt;rlink);<br>
+        }<br>
+      }<br>
+      template &lt;class elemType&gt;<br>
+      void  binaryTreeType&lt;elemType&gt;::destroy(binaryTreeNode&lt;elemType&gt;* &amp;p)<br>
+      {<br>
+        if (p != NULL)<br>
+        {<br>
+          destroy(p-&gt;llink);<br>
+          destroy(p-&gt;rlink);<br>
+          delete p;<br>
+          p = NULL;<br>
+        }<br>
+      }<br>
+      template &lt;class elemType&gt;<br>
+      binaryTreeType&lt;elemType&gt;::~binaryTreeType()<br>
+      {<br>
+        destroy(root);<br>
+      }<br>
+      <strong>PLACE DEFINITION FOR INSERT FUNCTION HERE</strong>. 
+    </p>
+    <p>
+      Note that in the book, the author uses a derived class for binary search tree functions, such as the one we need in particular: insert. I just placed the insert function in the main class. He also uses an assert function, so be sure to include the cassert header file. Now here's your implementation:
+    </p>
+    <p class="blogCenter">
+      int main()<br>
+      {<br>
+        int num = 0;<br>
+        binaryTreeType&lt;int&gt; T1;<br>
+        
+          cout &lt;&lt; "Enter a list of integers to build " &lt;&lt;<br>
+          "binary tree T1. End with -999." &lt;&lt; endl;<br>
+        while (num != -999)<br>
+        {<br>
+          cin &gt;&gt; num;<br>
+          if (num != -999)<br>
+            T1.insert(num);<br>
+        }<br>
+        
+        T1.inorderTraversal();<br>
+        
+        return 0; <br>
+      }
+    </p>
+	</article>
   </section>
   <!--END section main-->
   <aside class="aside">
