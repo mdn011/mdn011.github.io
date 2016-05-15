@@ -116,6 +116,7 @@ div#poem {
 	text-align: center;
 }
 .list {
+	display: inline-block;
 	text-align: left;
 	display: inline-block;
 	margin: 0 auto;
