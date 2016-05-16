@@ -1,0 +1,109 @@
+/*
+@media screen and (min-device-width: 481px) {
+	#guarantee {
+	margin-right: 250px;
+	}
+}
+
+@media screen and (max-device-width: 480px) {
+	#guarantee {
+	margin-right: 30px;
+	}
+}
+*/
+
+
+body {
+	font-size: small;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	line-height: 1.6em;
+}
+
+h1, h2 {
+	color: #007e7e;
+}
+
+h1 {
+	font-size: 150%;
+}
+
+h2 {
+	font-size: 130%;
+}
+
+#elixirs {
+  border: thin solid #007e7e;
+  width: 200px;
+  padding: 0px 20px 20px 20px;
+  margin-left: 20px;
+  text-align: center;
+  background-image: url("../images/cocktail.gif");
+  background-repeat: repeat-x;
+  line-height: 1;
+  float: right;
+}
+
+#elixirs h2 {
+  color: black;
+}
+
+#elixirs h3 {
+  color: #d12c47;
+}
+
+
+#guarantee {
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	background-color: #ffa500;
+	padding: 25px;
+	padding-left: 80px; /*no space between number and px*/
+	/*Order matters here. If padding-left when on top of padding,
+	won't render correctly since padding would override padding-left.*/
+	margin: 30px;
+	margin-right: 250px;
+	line-height: 1.9em;
+	font-style: italic;
+	color: #444444;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background-image: url(../images/background.gif);
+	/*By default, background images are repeated;
+	also position is top-left of element. */
+	background-repeat: no-repeat;
+	background-position: left top;
+	border-style: dashed;
+	border-color: white;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+#directions a:link {
+  color: #007e7e;
+}
+
+#directions a:visited {
+  color: #ff00ff;
+}
+
+#directions a:hover {
+  background: #ff00ff;
+  color: #0000ff;
+}
+
+.cd {
+  font-style: italic;
+}
+
+.artist {
+  font-weight: bold;
+}
+
+#footer {
+  font-size: 50%;
+  text-align: center;
+  line-height: normal;
+  margin-top: 30px;
+}
