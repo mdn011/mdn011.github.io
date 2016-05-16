@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- Michael Nguyen
+     Chapter 4: Quote of the Day
+    3/23/2016
+-->     
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSJQ Assignment 4 - Arrays / Date Starter File</title>
+
+    <style>
+        body{
+            font-family: arial, sans-serif;
+            font-size: 100%;
+        }
+        form{
+            margin-top: 50px;
+        }
+    </style>
+    
+    <script>
+    
+    window.onload = function() {
+        //************************************************************
+        // 1: define variables for today's date,
+        //************************************************************  
+        var today = new Date();
+    
+        //************************************************************
+        // 2: define an array to hold the day names 
+        //************************************************************  
+        var dayArray = new Array();
+    
+        dayArray[0] = "Sunday";
+        dayArray[1] = "Monday";
+        dayArray[2] = "Tuesday";
+        dayArray[3] = "Wednesday";
+        dayArray[4] = "Thursday";
+        dayArray[5] = "Friday";
+        dayArray[6] = "Saturday";
+
+        var dayOfWeek = dayArray[today.getDay()];
+    
+        //************************************************************
+        // 3: define an array to hold the daily quotes
+        //************************************************************  
+        
+        var quoteArray = new Array();
+
+        quoteArray[0] = "Ability is nothing without opportunity - Napoleon Bonaparte";
+        quoteArray[1] = "Nothing happens unless first we dream - Carl Sandburg";
+        quoteArray[2] = "Believe you can and you're halfway there - Theodore Roosevelt";
+        quoteArray[3] = "A place for everything, everything in its place - Benjamin Franklin";
+        quoteArray[4] = "Don't let the fear of striking out hold you back - Babe Ruth";
+        quoteArray[5] = "We can't help everyone, but everyone can help someone - Ronald Reagan";
+        quoteArray[6] = "With self-discipline most anything is possible - Theodore Roosevelt";
+
+        //************************************************************
+        // 4:  loop through all of the quotes
+        //    and write the quotes to the page. Use DOM methods or innerHTML
+        //    to write to the page.
+        //************************************************************  
+            
+        var displayQuote = document.getElementById('quote');
+    
+        // loop through the array  - create elements, nodes, append them 
+        for(var i in quoteArray) {
+            var text = document.createTextNode(quoteArray[i]);
+            var br   = document.createElement('br');
+            
+            displayQuote.appendChild(text);
+            displayQuote.appendChild(br);
+        }
+
+        //alert(quoteArray[0] + quoteArray[6]);
+
+        //alert(dayOfWeek);
+
+        //Variables for display of today's quote and name of day
+        var displayDayQuote  = document.getElementById('dayQuote');
+
+        var dayQuote = quoteArray[today.getDay()]; 
+
+        var dayQuoteText  = document.createTextNode(dayQuote);
+        var dayOfWeekText = document.createTextNode(dayOfWeek);
+        var br            = document.createElement('br');
+
+        displayDayQuote.appendChild(dayQuoteText);
+        displayDayQuote.appendChild(br);
+        displayDayQuote.appendChild(dayOfWeekText);
+
+    }
+        
+
+    </script>
+ 
+<!-- The following are sample quotes. You can use other quotes -->
+<!-- of your choosing if you want to.                          -->
+<!--
+Ability is nothing without opportunity - Napoleon Bonaparte
+Nothing happens unless first we dream - Carl Sandburg
+Believe you can and you're halfway there - Theodore Roosevelt
+A place for everything, everything in its place - Benjamin Franklin
+Don't let the fear of striking out hold you back - Babe Ruth
+We can't help everyone, but everyone can help someone - Ronald Reagan
+With self-discipline most anything is possible - Theodore Roosevelt
+-->
+    
+</head>
+
+<body>
+    <h1>Quote of the Day</h1>
+
+    <h2>
+    <span id="dayQuote">
+    </span>
+    </h2>
+
+    <hr>
+    <br>
+
+    <div id="quote">
+    <b>All the Quotes:</b>
+    <br><br>
+    </div>
+
+</body>
+</html>

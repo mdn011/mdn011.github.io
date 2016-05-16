@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--
+    Homework Assignment 2
+    Author: Michael Nguyen
+    Student ID: 5470399
+    Class: WEBD 170
+    Date: 2/17/2016
+    
+    Using variables and calculations to show results to the page with the DOM.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+	<title>Homework Assignment 2: Sees Candy</title>
+	<style>
+         body {
+            background-color: #FFB6C1;
+            margin-left: 20%;
+            margin-right: 20%;
+            border: 2px solid red;
+            padding: 10px 10px 10px 10px;
+            font-family: sans-serif;
+         }
+         div.heart-shape{
+		    position: relative;
+		    width: 20px;
+		    height: 20px;
+		    -webkit-transform: rotate(45deg);
+		    -moz-transform: rotate(45deg);
+		    -ms-transform: rotate(45deg);
+		    -o-transform: rotate(45deg);
+		    transform: rotate(45deg);
+		    background-color: rgba(255,0,0, 1);
+		}
+		div.heart-shape:before,
+		div.heart-shape:after{
+		    position: absolute;
+		    width: 20px;
+		    height: 20px;
+		    content: '';
+		    -webkit-border-radius: 50%;
+		    -moz-border-radius: 50%;
+		    -o-border-radius: 50%;
+		    border-radius: 50%;
+		    background-color: rgba(255,0,0, 1);
+		}
+		div.heart-shape:before{
+		    bottom: 0px;
+		    left: -10px;
+		}
+		div.heart-shape:after{
+		    top: -10px;
+		    right: 0px;
+		}
+     </style>
+
+<script type="text/javascript">
+//Box prices per pound
+//1-5 lbs, 6-9 lbs, 10 lbs
+var boxPriceSmall = 20, boxPriceMedium = 15, boxPriceLarge = 10;
+
+//Shipping costs per pound
+//1-3 lbs, 4-7 lbs, 8-9 lbs, 10 lbs
+var shippingCostSmall = 5, shippingCostMedium = 10, shippingCostLarge = 15, shippingCostLargeX = 20;
+
+//Generate a random number
+var randNumber = Math.random() * 10;
+randNumber = Math.ceil(randNumber);
+
+//Store random number for pounds ordered
+var lbsOrdered = randNumber;
+
+//Calculate cost of the box based on number
+var boxCost = 0;
+
+if(lbsOrdered <= 5)
+	boxCost = boxPriceSmall  * lbsOrdered;
+else if(lbsOrdered <= 9)
+	boxCost = boxPriceMedium * lbsOrdered;
+else
+	boxCost = boxPriceLarge  * lbsOrdered;
+
+//Calculate the cost of shipping based on number
+var shippingCost = 0;
+
+if(lbsOrdered <= 3)
+	shippingCost = shippingCostSmall  * lbsOrdered;
+else if(lbsOrdered <= 7)
+	shippingCost = shippingCostMedium * lbsOrdered;
+else if(lbsOrdered <= 9)
+	shippingCost = shippingCostLarge  * lbsOrdered;
+else
+	shippingCost = shippingCostLargeX * lbsOrdered;
+
+//Calculate Total
+var totalCost = boxCost + shippingCost;
+
+/*
+console.log("randNumber = " + randNumber + ", boxCost = " + boxCost + ", shippingCost = " + shippingCost + ", totalCost = " + totalCost);
+*/
+
+window.onload = function(){
+    document.getElementById("boxPriceSmall"		).innerHTML = boxPriceSmall     .toFixed(2);
+    document.getElementById("boxPriceMedium"    ).innerHTML = boxPriceMedium    .toFixed(2);
+    document.getElementById("boxPriceLarge"     ).innerHTML = boxPriceLarge     .toFixed(2);
+    document.getElementById("shippingCostSmall" ).innerHTML = shippingCostSmall .toFixed(2);
+    document.getElementById("shippingCostMedium").innerHTML = shippingCostMedium.toFixed(2);
+    document.getElementById("shippingCostLarge" ).innerHTML = shippingCostLarge .toFixed(2);
+    document.getElementById("shippingCostLargeX").innerHTML = shippingCostLargeX.toFixed(2);
+    document.getElementById("lbsOrdered"        ).innerHTML = lbsOrdered        
+    document.getElementById("boxCost"           ).innerHTML = boxCost           
+    document.getElementById("shippingCost"      ).innerHTML = shippingCost      
+    document.getElementById("totalCost"         ).innerHTML = totalCost         
+}
+
+</script>
+</head>
+
+<body>
+<div class="heart-shape"></div>
+<h1 align="center">Sees Candy Valentines Special</h1>
+
+<h2 align="center">Special Heart Shaped Box of Assorted Chocolates</h2>
+<h2 align="center">1 lb box–10 lb box Available</h2>
+
+<h3>Pricing</h3>
+<ul>
+	<li>$<span id="boxPriceSmall"></span> per pound for box of 1–5 lbs </li>
+	<li>$<span id="boxPriceMedium"></span> per pound for box of 6–9 lbs</li>
+	<li>$<span id="boxPriceLarge"></span> per pound for box of 10 lbs  </li>
+</ul>
+
+<h3>Shipping</h3>
+<ul>
+	<li>$<span id="shippingCostSmall"></span> for 1–3 lb box </li>
+	<li>$<span id="shippingCostMedium"></span> for 4–7 lb box</li>
+	<li>$<span id="shippingCostLarge"></span> for 8–9 lb box </li>
+	<li>$<span id="shippingCostLargeX"></span> for 10 lb box</li>
+</ul>
+
+<hr>
+
+<h3 align="center">Your Transaction</h3>
+<p>
+	Number of pounds ordered: <span id="lbsOrdered"></span> lbs<br>
+	Cost of Box: $<span id="boxCost"></span>                   <br>
+	Shipping: $<span id="shippingCost"></span>                 <br>
+	Total: $<span id="totalCost"></span>
+</p>
+
+</body>
+</html>
