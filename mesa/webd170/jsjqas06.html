@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!-- Michael Nguyen
+     jsjqas06.html
+     4/13/2016
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Assignment 6</title>
+
+<!-- video  https://youtu.be/XEoWYcolaEM -->
+
+<style>
+       
+body {
+       background-color: #fff;
+       font-family: arial, sans-serif;
+       font-size: 100%;
+}
+
+a {
+    color: blue;   
+}
+
+#welcome p strong {
+                   color: navy;
+                   font-size: 1.2em;
+}
+
+#welcome p:first-of-type {
+                          margin-bottom: 50px;
+}
+
+section {
+         margin-bottom: 50px;
+}
+
+
+/* main container */
+#main {
+        width: 960px;
+	margin: 50px auto;
+	border: 2px solid #000;
+	padding: 20px;
+	background-color: #e0e0ff;
+	position: relative;
+	box-sizing: border-box;
+}
+
+
+/* form container */
+#loginDiv {
+	   width: 300px;
+	   position: absolute;
+	   left: 650px;
+	   top: 6px;
+	   z-index: 100;
+	   border: 1px solid navy;
+}
+
+
+ /* paragraph that shows the text "Login" which is clicked on to display/remove the form */
+#login {
+	margin: 0;
+	cursor: pointer;
+	background-color: rgb(255,255,255);
+	padding: 5px 0 2px 30px;
+}
+
+#login:hover{
+	     background-color: rgb(110,138,195);	
+}
+
+
+ /*  plus sign icon for login form */
+.plus {
+	background: url(img_open.png) no-repeat 8px 7px;
+	background-color: rgb(110,138,195);	
+}
+
+ /* minus sign icon for login form */
+.minus {
+	background: url(img_close.png) no-repeat 8px 7px;
+}
+
+
+/*form is hidden when the page loads */
+#loginDiv form {
+	        padding: 10px 10px 10px 10px;
+	        display: none;	
+	        background-color: rgb(255,255,255);
+}
+
+#loginDiv label {
+	         display: block;
+	         width: 100px;
+	         margin: 0 15px 0 0;
+}
+
+#loginDiv input {
+	         font-size: 1.2em;
+		 border: 1px solid navy;
+}
+
+#loginDiv input:focus {
+                       background-color: rgb(110,138,195);
+		       border: 2px solid navy;
+}
+
+#loginDiv input[type=button] {
+	                      width: 100px;
+}
+
+
+
+footer {
+        text-align: center;
+        margin-top: 50px;
+	margin-bottom: 10px;
+	padding: 20px;
+	border-top: 1px solid #000;
+}
+
+
+/* ad is not shown when the page loads  */
+ #ad {
+       width: 300px;
+       height:300px;
+       border: 1px solid #000;
+       background-color: yellow;
+       position: absolute;
+       left: 330px;
+       top: -500px;  /* you can change this inbitially for viewing purposes only but be sure to set it back */
+       box-sizing: border-box;
+       background-image: url(ad.jpg);
+       background-repeat: no-repeat;
+}
+            
+/* close button on ad */
+#adbtn {
+       width: 50px;
+       height: 50px;
+       border: 2px solid #000;
+       border-top-width: 1px;
+       border-right-width: 1px;
+       background-color: #fff;
+       font-size:3em;
+       text-align: center;
+       cursor: pointer;
+       box-sizing: border-box;
+       position: absolute;
+       top: 0px;
+       right: 0px;
+}
+
+</style>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script>
+$(document).ready(function(){ 
+
+  // After a five second delay after the page loads, the ad will slide down slowly
+  $("#ad").delay(5000).animate( {top: "100px"}, 5000);
+  
+  // Click the X button on the ad to have it fade out for a duration of 5 seconds
+  $("#adbtn").click(function(){
+  $("#ad").fadeOut(5000);
+  });
+
+  // Click the login bar for the login form to slide down and for the plus sign to change to minus sign
+  $("#login").click(function(){
+  $(this).toggleClass("minus");                 // both plus/minus sign and slide down/up are toggled 
+  $("#loginDiv form").stop().slideToggle(1000);  
+  /*one second duration. Stop method is added to prevent continuation of slideToggle*/
+  });
+
+
+  // Clicking the button will validate whether or not information in both username and pw fields are inputted
+  $("#loginDiv input[type=button]").click(function (){
+
+    var username = $("#username").val();
+    var password = $("#pw").val();
+
+    var errorMessage   = 'Please enter both login and password.';
+    var successMessage = 'Please stand by.';
+
+    // if either one of the fields is empty, then display error message. Else, display success message.
+    if((username == "") || (password == ""))
+      document.getElementById("error").innerHTML = errorMessage; 
+    else
+      document.getElementById("error").innerHTML = successMessage;
+  });
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<!-- main container -->	
+<div id="main">
+	
+<section id="loginDiv">
+       <!-- when this is clicked on the below form should be displayed and plus sign should change to minus sign-->
+       <p id="login" class="plus">Login</p> 
+       
+       <form>
+	   <p>
+	      <label for="username">Username:</label>
+	      <input type="text" name="username" id="username">
+	   </p>
+	
+	   <p>
+	      <label for="pw">Password:</label>
+	      <input type="password" name="pw" id="pw">
+	   </p>
+	
+	   <p>
+	      <input type="button" value="Submit">
+	   </p>
+	   
+	   <!-- placeholder for response if form data is correct/incorrect --> 
+	  <p id="error"> </p>
+       </form>
+</section>
+
+
+<section id="welcome">
+    <h1>Welcome to the Local jQuery User Group Website</h1>
+       <p>
+          <strong>Click the login button at the top of the page to login. To become a member please <a href="#">Register</a></strong>
+       </p>
+
+   <h2>About this page layout:</h2>
+      <p>
+	The main container (parent) has 'relative' positioning so that the 'login' container can be absolutley positioned with respect to
+	that main container. Otherwise, it would default to being absolutley positioned with respect to the window.
+      </p>
+   
+     <p>
+       In order for the login panel to be placed on top of the page  we need to use  absolute positioning, otherwise,
+       it would move the rest of the content down as done in the FAQ assignment. Technically, absolute positioning takes that element out of
+       the normal flow of the document, so that it is on top of the page. The 'ad' is also absolutely positioned to the same main container.
+    </p>
+</section>
+
+
+<section>
+    <h2>This week's agenda:</h2>
+    <p>There will be a live meeting this Tuesday evening from 7:00pm to 8:00pm PST using our WebEx Conferencing Software.
+       It will be recorded! Please note that the code samples will be available on our GitHub repository.
+    </p>
+</section>
+
+
+<footer>
+	Copyright &copy; Local jQuery User Group	
+</footer>
+
+ 
+ <!--  ad which is absolutely positioned -500px from the top so you do not see it when page loads-->
+ <div id="ad">
+   <div id="adbtn">
+       X
+   </div>
+ </div>
+
+ <!-- end main container -->
+</div>
+
+
+</body>
+</html>
