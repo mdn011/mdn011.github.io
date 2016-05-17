@@ -35,6 +35,100 @@
 	select {
 		width: 200px;
 	}
+
+/* form container */
+#loginDiv {
+	   width: 300px;
+	   position: relative;
+	   left: 0px;
+	   top: 6px;
+	   z-index: 100;
+	   border: 1px solid navy;
+}
+
+
+ /* paragraph that shows the text "Login" which is clicked on to display/remove the form */
+#secret {
+	margin: 0;
+	cursor: pointer;
+	background-color: rgb(255,255,255);
+	padding: 5px 0 2px 30px;
+}
+
+#secret:hover{
+	     background-color: rgb(110,138,195);	
+}
+
+
+ /*  plus sign icon for login form */
+.plus {
+	background: url(../images/img_open.png) no-repeat 8px 7px;
+	background-color: rgb(110,138,195);	
+}
+
+ /* minus sign icon for login form */
+.minus {
+	background: url(../images/img_close.png) no-repeat 8px 7px;
+}
+
+
+/*form is hidden when the page loads */
+#loginDiv form {
+	        padding: 10px 10px 10px 10px;
+	        display: none;	
+	        background-color: rgb(255,255,255);
+}
+
+#loginDiv label {
+	         display: block;
+	         width: 100px;
+	         margin: 0 15px 0 0;
+}
+
+#loginDiv input {
+	         font-size: 1.2em;
+		 border: 1px solid navy;
+}
+
+#loginDiv input:focus {
+                       background-color: rgb(110,138,195);
+		       border: 2px solid navy;
+}
+
+#loginDiv input[type=button] {
+	                      width: 100px;
+}
+
+ #ad {
+       width: 300px;
+       height:200px;
+       border: 1px solid #000;
+       background-color: yellow;
+       position: absolute;
+       left: 780px;
+       top: -500px;  /* you can change this inbitially for viewing purposes only but be sure to set it back */
+       box-sizing: border-box;
+       /*background-image: url(ad.jpg);*/
+       background-repeat: no-repeat;
+}
+            
+/* close button on ad */
+#adbtn {
+       width: 25px;
+       height: 25px;
+       border: 2px solid #000;
+       border-top-width: 1px;
+       border-right-width: 1px;
+       background-color: #fff;
+       font-size:1em;
+       text-align: center;
+       cursor: pointer;
+       box-sizing: border-box;
+       position: absolute;
+       top: 0px;
+       right: 0px;
+}
+
 /*
 Just playing around with CSS animation.
 .slide {

@@ -37,6 +37,7 @@
 <script src="external/jquery/jquery.js"></script>
 <script src="jquery-ui.js"></script>
 <!--NOTE: options changed in jquery-ui.js. Change active->false; collapsible->true. Line 874.-->
+<script src="js/change-color.js"></script>
 <script>
 $(document).ready(function() {
   $( "#accordion" ).accordion();
@@ -49,14 +50,61 @@ $(document).ready(function() {
       $( this ).removeClass( "ui-state-hover" );
     }
   );
+
+  $("#secret").click(function(){
+    $(this).toggleClass("minus");
+    $("#loginDiv form").stop().slideToggle(1000);
+  });
+
+    // Clicking the button will validate whether or not information in both username and pw fields are inputted
+  $("#loginDiv input[type=button]").click(function (){
+
+    var username = $("#username").val();
+    var password = $("#pw").val();
+
+    var errorMessage   = 'Please enter both login and password.';
+    var errorMessage2  = 'Wrong username or password.';
+    var successMessage = 'Please stand by.';
+
+    // if either one of the fields is empty, then display error message. Else, display success message.
+    if((username == "") || (password == ""))
+      document.getElementById("error").innerHTML = errorMessage; 
+    else if ((username != "mesa") && (password != "webd170"))
+      document.getElementById("error").innerHTML = errorMessage2;
+    else {
+      document.getElementById("error").innerHTML = successMessage;
+      $("#ad").delay(5000).animate( {top: "0px"}, 5000);
+    }
+  }); 
+
+  $("#adbtn").click(function(){
+  $("#ad").fadeOut(5000);
+  });
+
 });
 </script>
 </head>
 <body>
 <header>
-  <p>
+  <p id="sample-text">
     MESA COLLEGE
   </p>
+  <div id="ad">
+      <div class="alert alert-warning hidden" id="errorMessage"></div>
+      <h1 class="title">Green sucks!</h1>
+
+      <div class="input-wrapper empty">
+          <input type="text" id="color"/>
+          <button id="button" class="btn btn-primary">Change heading color</button>
+      </div>
+      <div id="sample-text">
+        <br></br>
+        Type in a color above and click the button to see the text color change.
+      </div>
+    <div id="adbtn">
+       X
+    </div>
+ </div>
   <nav class="navigation">
     <ul>
       <li><a href="..">Home                        </a></li><!--
@@ -85,7 +133,32 @@ $(document).ready(function() {
             <li><a href="webd170/jsjqas06.html">Assignment 6</a></li>
             <li><a href="webd170/jsjqas07.html">Assignment 7</a></li>
           </ul>
+          <div id="loginDiv">
+                 <!-- when this is clicked on the below form should be displayed and plus sign should change to minus sign-->
+                 <p id="secret" class="plus">SECRET</p> 
+                 
+                 <form>
+                  <p>
+                  <label for="username">Username:</label>
+                  <input type="text" name="username" id="username">
+                  </p>
+            
+                  <p>
+                  <label for="pw">Password:</label>
+                  <input type="password" name="pw" id="pw">
+                  </p>
+            
+                  <p>
+                  <input type="button" value="Submit">
+                  </p>
+               
+                  <!-- placeholder for response if form data is correct/incorrect --> 
+                  <p id="error"> </p>
+                 </form>
+          </div>
+          <!--END section loginDiv-->
         </div>
+        <!--END first accordion div-->
       <h2>WEBD 162: HTML/CSS</h2>
         <div>
           <ul>
@@ -101,6 +174,7 @@ $(document).ready(function() {
             <li><a href="webd162/chapter14/starbuzz/form.html">Chapter 14: Form</a></li>
           </ul>
         </div>
+        <!--END second accordion div-->
       </div>
       <!--END div accordion-->
     </article>
