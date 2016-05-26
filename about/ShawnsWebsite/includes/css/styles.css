@@ -1,0 +1,182 @@
+/*
+
+My Custom CSS
+=============
+
+Author:  Brad Hussey
+Updated: August 2013
+Notes:	 Hand coded for Udemy.com
+
+*/
+
+
+/* --------------------------------------
+   Layout
+   -------------------------------------- */
+
+   body {
+      height: 100%;
+      /*background-color: #222;*/
+   }
+
+   #features {
+      text-align: center;
+   }
+
+   #features img {
+      margin: 0 0 20px;
+   }
+
+/* --------------------------------------
+   Typography
+   -------------------------------------- */
+
+   .well .page-header {
+   margin-top: 0;
+   }
+
+   .well .page-header h1 {
+   margin-top: 0;
+   }
+
+   #smallText {
+      font-size: .5em;
+   }
+
+/* --------------------------------------
+   Navbar
+   -------------------------------------- */
+
+   header {
+      height: 500px;
+      background: transparent no-repeat fixed 0% 0%;
+      /*border-bottom:0px solid;*/
+   }
+
+   .parallax-window {
+    min-height: 400px;
+    height: 500px;
+    background: transparent;
+   }
+
+   #parallaxImage {
+      margin: 20px 0px 0px 20px;
+      border-radius: 8px 8px 8px 8px;
+      max-width: 100%;
+      height: auto;
+      width: auto\9; /* ie8 */
+   }
+   
+   /*#topNav {
+      background-color: #000;
+      z-index: 1;
+   } */
+
+   #myLogo {
+      height: 50px;
+   }
+
+   #myLogo2 {
+      height: 50px;
+   }
+
+   #bottomNav {
+      /*top: 84px;
+      z-index: -1;*/
+      margin-left: 0px;
+      margin-right: 0px;
+      width: 100%;
+   }
+   
+
+   #searchInput {
+      width: 200px;
+   }
+
+   .navbar-brand {
+      padding: 0px 15px;
+   }
+   
+/* --------------------------------------
+   Carousel
+   -------------------------------------- */
+
+   #myCarousel {
+      margin-top: 0px;
+      /*60px*/
+   }
+
+   .carousel-caption {
+      /*font-size: 24px;*/
+      font-size: 20px;
+   }
+
+   .carousel-caption h4 {
+      /*font-size: 32px;*/
+      font-size: 26px;
+   }
+
+   #myCarousel .item { height: 400px; }
+
+   #slide1 {
+      background: url('../../images/veronica2.png') center;
+      /*top center no-repeat*/
+   }
+
+   #slide2 {
+      background: url('../../images/justin2.jpg') center;
+   }
+
+   #slide3 {
+      background: url('../../images/crewshot.jpg') center;
+   }
+
+
+/* --------------------------------------
+   Global Styles
+   -------------------------------------- */
+
+   .well {
+      margin: 20px 0;
+   }
+
+/* --------------------------------------
+   Media Queries
+   -------------------------------------- */
+
+   /* Portrait & landscape phone */
+   @media (max-width: 480px) {
+   	
+   }
+
+   /* Landscape phone to portrait tablet */
+   @media (max-width: 768px) {
+   	
+   }
+
+   /* Large desktop */
+   @media (min-width: 1200px) {
+   	
+   }
+
+/* --------------------------------------
+   Footer
+   -------------------------------------- */
+
+   footer {
+     color: #efe5d0;
+     text-align: center;
+     padding: 15px;
+     /*margin: 0 10px 10px 10px;*/
+     font-size: 90%;
+     background-image: url("../../images/mountain.png");
+   }
+   #validator {
+     float: right;
+   }
+   #htmlvalidator {
+     float: left;
+   }
+   #validator a {
+     border-bottom: none;
+   }
