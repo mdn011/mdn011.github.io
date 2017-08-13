@@ -126,7 +126,27 @@ main.row aside {
 	-webkit-box-shadow: 0 0 22px #000;
 	box-shadow: 0 0 22px #000;
 }
+footer {
+  color: #efe5d0;
+  text-align: center;
+  padding: 15px;
+  /*margin: 0 10px 10px 10px;*/
+  font-size: 90%;
+}
+footer p {
+	display: inline-block;
+}
+#validator {
+  float: right;
+}
+#htmlvalidator {
+  float: left;
+}
+#validator a {
+  border-bottom: none;
+}
 
+/*START: MEDIA QUERIES*/
 @media (max-width: 1199px){
 	.container div {
 		font-size: 125%;
@@ -178,6 +198,9 @@ main.row aside {
 	.mikee {
 		margin: 20px 0px 0px 0px;
 	}
+	footer div {
+	  padding-left: 88px;
+	}
 }
 
 @media (max-width: 475px){
@@ -204,4 +227,17 @@ main.row aside {
 	.mikee {
 		max-width: 100%;
 	}
+	footer p {
+		display: block;
+	}
+	footer div {
+		padding-left: 0px;
+	}
+	#validator {
+		float: none;
+	}
+	#htmlvalidator {
+		float: none;
+	}
 }
+/*END: MEDIA QUERIES*/
