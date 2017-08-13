@@ -18,6 +18,25 @@
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 	<style>
+		main.row article tr, td {
+			border-bottom: solid 1px black;
+		}
+		main.row article caption {
+			font-size: 120%;
+		}
+		main.row section {
+			padding: 15px 0px;
+		}
+		figure img {
+			max-width: 100%;
+			padding: 15px;
+			display: block;
+			text-align: center;
+			margin: 0 auto;
+		}
+		figure figcaption {
+			font-size: 120%;
+		}
 		
 		/*START: MEDIA QUERIES*/
 		@media (max-width: 1199px){
@@ -65,9 +84,37 @@
     </div>
     <main class="row">
       <article class="col-sm-7">
+      	<h1>Japan</h1>
+      	<section>
+     	  	<table width="100%" border="0">
+      	  	<caption>Flight Itenarary</caption>
+							<tr>
+								<th class="depart">Departure and Arrival</th>
+								<th class="location">Location</th>
+								<th class="cost">Cost</th>
+							</tr>
+							<tr>
+								<td class="depart">11:25 a.m., Thu., Dec. 21, 2017 -<br><span class="secondtime">4:25 p.m., Fri., Dec. 22, 2017</span></td>
+								<td class="location">Los Angeles, CA, US (LAX) -<br>Tokyo, JP (NRT - Narita)</td>
+								<td class="cost" rowspan="2">$864</td>
+							</tr>
+							<tr>
+								<td class="depart">11:25 a.m., Thu., Dec. 21, 2017 -<br><span class="secondtime">4:25 p.m., Fri., Dec. 22, 2017</span></td>
+								<td class="location">Los Angeles, CA, US (LAX) -<br>Tokyo, JP (NRT - Narita)</td>
+							</tr>
+					</table>
+				</section>
+      	
       	<h1>Vietnam</h1>
       	<section>
-      	  
+  				<figure>
+						<img src="../images/fishing_village.jpg" alt="Fishing boats out in the bay">
+						<figcaption>Fishermen out in their boats, which are nothing more than round tubs. They spend their night out in the waters. </figcaption>
+					</figure>
+     			<figure>
+						<img src="../images/busy_street.jpg" alt="A popular district during night time">
+						<figcaption>A busy street in the heart of Ho Chi Minh City. Lots of foreigners about. </figcaption>
+					</figure>
       	</section>
       </article>
       <aside class="col-sm-5">
