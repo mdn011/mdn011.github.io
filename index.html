@@ -18,12 +18,93 @@
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
   </head>
+	<style>
+	#categories .mikee, #outsideCat .mikee {
+		width:40px;
+		height:40px;
+		-moz-box-shadow: 0 0 3px #000;
+		-webkit-box-shadow: 0 0 3px #000;
+		box-shadow: 0 0 3px #000;
+		
+		-webkit-transition: all 0.5s ease;
+		-moz-transition: position 10s;
+		-ms-transition: position 10s;
+		-o-transition: position 10s;
+		transition: all 0.5s ease;
+	}
+	
+	.sticky {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		background-color: #000;
+		animation: smoothScroll 1s forwards;
+		z-index: 100;
+		text-align: center;
+	}
+	
+	.sticky + section {
+		padding-top: 60px;
+	}
+	
+	@keyframes smoothScroll {
+		0% {
+			transform: translateY(-40px);
+		}
+		100% {
+			transform: translateY(0px);
+		}
+	}
+	</style>
   <body>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 	<script src="js/jquery-1.11.3.min.js"></script>
 
 	<!-- Include all compiled plugins (below), or include individual files as needed --> 
 	<script src="js/bootstrap.js"></script>
+	
+	<script>
+	$(document).ready(function() {
+		//click the category buttons to only show those categories
+		$('.kings').click(function(e) { 
+			if ($('section').is(':animated')) return;
+			$('section').hide();
+			$('section:has(div.kings)').fadeIn(300);
+		});
+		
+		$('.writing').click(function(e) {
+			if ($('section').is(':animated')) return;
+			$('section').hide();
+			$('section:has(div.writing)').fadeIn(300);
+		});
+		
+		$('.coding').click(function(e) {
+			if ($('section').is(':animated')) return;
+			$('section').hide();
+			$('section:has(div.coding)').fadeIn(300);
+		});
+		
+		//click home category button
+		$('.mikee').click(function(e) { 
+			if ($('section').is(':animated')) return;
+			$('section').hide();
+			$('section').fadeIn(300);
+		});
+		
+		//sticky category bar for navigation
+		$(window).bind('scroll', function () {
+		console.log(window.pageYOffset);
+    if ($(window).scrollTop() > 300) {
+				if (!$('#outsideCat').length) {
+					$('#categories').clone(true).prop('id', 'outsideCat').addClass('sticky').prependTo(document.body);
+				}
+    } else {
+			$('#outsideCat').remove();
+			console.log('remove');
+    }
+});
+	});
+	</script>
   <div class="container">
     <header class="row">
       <div class="col-sm-12">
@@ -47,16 +128,26 @@
     <main class="row">
       <article class="col-sm-7">
       	<h1>Blog</h1>
+				<!-- category buttons -->
+				<div id="categories">
+					<div class="mikee"></div>
+					&nbsp;
+					<div class="kings"></div>
+					&nbsp;
+					<div class="writing"></div>
+					&nbsp;
+					<div class="coding"></div>
+				</div>
 				<!-- 2018 -->
 				<section>
-      		<h2>Current Mood</h2>
+      		<h2>Current Mood <div class="kings" style="width:25px;height:25px"></div></h2>
       		<div id="vid">
 							<iframe width="560" height="315" src="https://www.youtube.com/embed/VLNrTQjTqLw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
       	</section>
 				<!-- 2008 -->
       	<section>
-      		<h2>Cry of the Existentialist</h2>
+      		<h2>Cry of the Existentialist <div class="writing" style="width:25px;height:25px"></div></h2>
       		<p><q>Well whaddya know. Would you look at this.<br>
 	  			This, this overwhelmer, high complainer pacifist.<br>
 	  			Ashamed by far are we humanity,<br>
@@ -84,6 +175,12 @@
 		
   		  	-2008</p>
       	</section>
+				<!-- github plug -->
+				<section>
+				<h2>Thank you for visiting! <div class="coding" style="width:25px;height:25px"></div></h2>
+				<p>This site is hosted by Github Pages.</p>
+				<p>View the repo here: https://github.com/mdn011/mdn011.github.io</p>
+				</section>
       </article>
       <aside class="col-sm-5">
       	<div class="mikee"></div>

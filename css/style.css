@@ -126,6 +126,49 @@ main.row aside {
 	-webkit-box-shadow: 0 0 22px #000;
 	box-shadow: 0 0 22px #000;
 }
+/* For the category buttons in the home page blog */
+.kings {
+	display: inline-block;
+  	width: 40px;
+  	height: 40px;
+  	border-radius: 50%;
+  	background-repeat: no-repeat;
+  	background-position: center center;
+  	background-size: cover;
+  	background-image: url('../images/kings.png');
+	margin: 0 auto;
+	-moz-box-shadow: 0 0 3px #000;
+	-webkit-box-shadow: 0 0 3px #000;
+	box-shadow: 0 0 3px #000;
+}
+.writing {
+	display: inline-block;
+  	width: 40px;
+  	height: 40px;
+  	border-radius: 50%;
+  	background-repeat: no-repeat;
+  	background-position: center center;
+  	background-size: cover;
+  	background-image: url('../images/writing.jpg');
+	margin: 0 auto;
+	-moz-box-shadow: 0 0 3px #000;
+	-webkit-box-shadow: 0 0 3px #000;
+	box-shadow: 0 0 3px #000;
+}
+.coding {
+	display: inline-block;
+  	width: 40px;
+  	height: 40px;
+  	border-radius: 50%;
+  	background-repeat: no-repeat;
+  	background-position: center center;
+  	background-size: cover;
+  	background-image: url('../images/coding.png');
+	margin: 0 auto;
+	-moz-box-shadow: 0 0 3px #000;
+	-webkit-box-shadow: 0 0 3px #000;
+	box-shadow: 0 0 3px #000;
+}
 footer {
   color: #efe5d0;
   text-align: center;
