@@ -54,6 +54,28 @@
 			transform: translateY(0px);
 		}
 	}
+	
+	#vid {
+		margin: auto;
+		text-align: center;
+	}
+	
+	/*START: MEDIA QUERIES*/
+		@media (max-width: 1199px){
+		iframe {
+			width: 100%;
+    }
+		}
+		@media (max-width: 991px){
+
+		}
+		@media (max-width: 767px){
+
+		}
+		@media (max-width: 475px){
+
+		}
+		/*END: MEDIA QUERIES*/
 	</style>
   </head>
   <body>
@@ -63,8 +85,14 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed --> 
 	<script src="js/bootstrap.js"></script>
 	
+	<!-- Include fitVids plugin -->
+  <script src="assets/fitvids/fitvids.js"></script>
+
 	<script>
 	$(document).ready(function() {
+		<!-- call the fitVids plugin to make video responsive-->
+		$('#vid').fitVids();
+		
 		//click the category buttons to only show those categories
 		$('.kings').click(function(e) { 
 			if ($('section').is(':animated')) return;
@@ -93,14 +121,13 @@
 		
 		//sticky category bar for navigation
 		$(window).bind('scroll', function () {
-		console.log(window.pageYOffset);
+		//console.log(window.pageYOffset);
     if ($(window).scrollTop() > 300) {
 				if (!$('#outsideCat').length) {
 					$('#categories').clone(true).prop('id', 'outsideCat').addClass('sticky').prependTo(document.body);
 				}
     } else {
 			$('#outsideCat').remove();
-			console.log('remove');
     }
 });
 	});
@@ -142,7 +169,7 @@
 				<section>
       		<h2>Current Mood <div class="kings" style="width:25px;height:25px"></div></h2>
       		<div id="vid">
-							<iframe width="560" height="315" src="https://www.youtube.com/embed/VLNrTQjTqLw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/VLNrTQjTqLw" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
       	</section>
 				<!-- 2008 -->
